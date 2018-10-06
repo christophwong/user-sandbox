@@ -9,5 +9,10 @@ class StaticPagesController < ApplicationController
   end
 
   def admin_only
+    if current_user.role != "admin"
+      flash[:notice] = "unauthorized"
+      redirect_to action: "home"
+    end
+
   end
 end
