@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>SignIn</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>SignIn</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+   <p class="notice"><%= notice %></p>
+   <p class="alert"><%= alert %></p>
+   <nav> 
+    <ul>
+        <li><%= link_to "home", root_path %></li>
+        <li><%= link_to "members area", static_pages_members_only_path %></li>
+        <li><%= link_to "admin area", static_pages_admin_only_path %></li>
+        <% if user_signed_in? %>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li> 
+        <% else %>
+            <li> <%= link_to "Sign In", new_user_session_path %> </li>
+        <% end %>
+    </ul>
+</nav>
+<%= yield %>
+</body>
 </html>
