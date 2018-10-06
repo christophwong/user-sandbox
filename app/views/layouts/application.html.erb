@@ -24,6 +24,10 @@
         <% end %>
     </ul>
 </nav>
+<% if user_signed_in? %>
+<p> you are signed in as <%=current_user.email%> </p>
+<p> with role <%=current_user.role%> </p>
+<% end %>
 <%= yield %>
 </body>
 </html>
