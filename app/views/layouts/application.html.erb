@@ -14,9 +14,9 @@
    <p class="alert"><%= alert %></p>
    <nav> 
     <ul>
-        <li><%= link_to "home", root_path %></li>
-        <li><%= link_to "members area", static_pages_members_only_path %></li>
-        <li><%= link_to "admin area", static_pages_admin_only_path %></li>
+        <li><%= link_to "home", root_path, :class => "active" %></li>
+        <li><%= link_to "members", static_pages_members_only_path %></li>
+        <li><%= link_to "admin", static_pages_admin_only_path %></li>
         <% if user_signed_in? %>
             <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li> 
         <% else %>
@@ -28,6 +28,8 @@
 <p> you are signed in as <%=current_user.email%> </p>
 <p> with role <%=current_user.role%> </p>
 <% end %>
-<%= yield %>
+<div class="main-content">
+    <%= yield %>
+</div>
 </body>
 </html>
