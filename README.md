@@ -1,24 +1,28 @@
-# README
+# User sandbox \([Live demo on Heroku] (https://sign-in-sandbox.herokuapp.com)\)
+a simple Rails 5 implementation of basic user authentication and authorization using Devise gem.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Prerequisite (have these installed):
+- ruby 2.5.1
+- rails 5.2.1
+- Postgresql
 
-Things you may want to cover:
+First-time starting app? Do this:
+```
+git clone git@github.com:christophwong/user-sandbox.git
+cd user-sandbox
+rails db:create
+rails db:migrate
+rails db:seed
 
-* Ruby version
+rails server
+```
+Now you have started up the app! Let's go check it out by typing the following in your terminal:
+```
+open http://localhost:3000
+```
+or open a web browser of your choice and go to http://localhost:3000
 
-* System dependencies
 
-* Configuration
+Now what does this app do?
+It is a starting point for experimenting with different authentication models.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
