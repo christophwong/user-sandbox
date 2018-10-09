@@ -10,10 +10,7 @@ First-time starting app? Do this:
 ```
 git clone git@github.com:christophwong/user-sandbox.git
 cd user-sandbox
-rails db:create
-rails db:migrate
-rails db:seed
-
+rails db:setup
 rails server
 ```
 Now you have started up the app! Let's go check it out by typing the following in your terminal:
