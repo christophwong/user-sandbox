@@ -25,4 +25,3 @@ or open a web browser of your choice and go to http://localhost:3000
 
 Now what does this app do?
 It is a starting point for experimenting with different authentication models.
-
