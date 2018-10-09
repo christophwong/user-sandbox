@@ -7,7 +7,5 @@ an admin password in plain text. Better not source control this file.
 
 User.create(
   :email => "admin@test.com",
-  :password => "admin123",
-  :password_confirmation => "admin123",
   :role => :admin
   )
