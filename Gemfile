@@ -64,3 +64,4 @@ gem 'devise'
 
 # Use pgsql as the database for Active Record
 gem 'pg'
+gem 'passwordless'
