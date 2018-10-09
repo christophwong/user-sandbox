@@ -1,4 +1,4 @@
-# User sandbox \([Live demo on Heroku] (https://sign-in-sandbox.herokuapp.com)\)
+# User sandbox \( [Live demo on Heroku](https://sign-in-sandbox.herokuapp.com) \)
 a simple Rails 5 implementation of basic user authentication and authorization using Devise gem.
 
 Prerequisite (have these installed):
