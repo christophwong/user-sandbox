@@ -1,19 +1,27 @@
 require 'test_helper'
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
-  test "should get home" do
-    get static_pages_home_url
+  include Devise::Test::IntegrationHelpers
+
+  test "should get home page" do
+    get root_url
     assert_response :success
   end
 
-  test "should get members_only" do
+  test "should redirect user if not signed in" do
+    get static_pages_members_only_url
+    assert_redirected_to new_user_session_path
+  end
+
+  test "should get members only page after sign in" do
+    sign_in users(:one)
     get static_pages_members_only_url
     assert_response :success
   end
 
   test "should get admin_only" do
+    sign_in users(:one)
     get static_pages_admin_only_url
-    assert_response :success
+    assert_redirected_to root_path
   end
-
 end

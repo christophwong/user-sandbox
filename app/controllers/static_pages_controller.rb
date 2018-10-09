@@ -11,7 +11,7 @@ class StaticPagesController < ApplicationController
   def admin_only
     if current_user.role != "admin"
       flash[:notice] = "unauthorized"
-      redirect_to action: "home"
+      redirect_to root_path
     end
 
   end
