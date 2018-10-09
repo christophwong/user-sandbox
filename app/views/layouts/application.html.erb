@@ -10,26 +10,28 @@
 </head>
 
 <body>
-   <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>
-   <nav> 
-    <ul>
-        <li><%= link_to "home", root_path, :class => "active" %></li>
-        <li><%= link_to "members", static_pages_members_only_path %></li>
-        <li><%= link_to "admin", static_pages_admin_only_path %></li>
-        <% if user_signed_in? %>
-            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li> 
-        <% else %>
-            <li> <%= link_to "Sign In", new_user_session_path %> </li>
-        <% end %>
-    </ul>
+ <p class="notice"><%= notice %></p>
+ <p class="alert"><%= alert %></p>
+ <nav>
+  <ul>
+    <li><%= link_to "home", root_path, :class => "active" %></li>
+    <li><%= link_to "members", static_pages_members_only_path %></li>
+    <li><%= link_to "admin", static_pages_admin_only_path %></li>
+    <% if user_signed_in? %>
+    <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+    <% else %>
+    <li> <%= link_to "Sign In", new_user_session_path %> </li>
+    <% end %>
+  </ul>
 </nav>
-<% if user_signed_in? %>
-<p> you are signed in as <%=current_user.email%> </p>
-<p> with role <%=current_user.role%> </p>
-<% end %>
 <div class="main-content">
-    <%= yield %>
+  <div class="login-info">
+    <% if user_signed_in? %>
+    <p> you are signed in as <%=current_user.email%> </p>
+    <p> with role <%=current_user.role%> </p>
+    <% end %>
+  </div>
+  <%= yield %>
 </div>
 </body>
 </html>
