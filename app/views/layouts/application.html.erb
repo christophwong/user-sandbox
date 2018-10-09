@@ -16,7 +16,7 @@
   <ul>
     <li><%= link_to "home", root_path, :class => "active" %></li>
     <li><%= link_to "members", members_only_path %></li>
-    <li><%= link_to "admin", static_pages_admin_only_path %></li>
+    <li><%= link_to "admin", admins_only_path %></li>
     <li><%= link_to "Sign Out", users.sign_out_path, method: :delete %></li>
     <li><%= link_to "Sign In", users.sign_in_path %></li>
   </ul>
